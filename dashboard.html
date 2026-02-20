@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BLOODTRACKER</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="logo">
+            <i class="fa-solid fa-droplet pulse-icon"></i> BLOODTRACKER
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="request.html">Request</a></li>
+            <li><a href="dashboard.html" class="highlight">Dashboard</a></li>
+        </ul>
+        <button class="btn-primary" id="loginBtn">Login</button>
+    </nav>
+
+    <main class="app-container">
+        <!-- Dashboard / About Us Section -->
+        <section class="glass-card form-section">
+            <div class="card-header">
+                <h2><i class="fa-solid fa-chart-line"></i> Dashboard & Support</h2>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="info-box mb-2">
+                    <h3><i class="fa-solid fa-circle-info"></i> About Us</h3>
+                    <p class="text-white-8 mt-1">
+                        BLOODTRACKER is an AI-powered emergency response network dealing with critical blood shortages.
+                        We connect patients with nearby donors instantly using real-time geolocation and urgency
+                        algorithms.
+                    </p>
+                </div>
+
+                <div class="info-box helpline-box mb-2">
+                    <h3><i class="fa-brands fa-whatsapp"></i> 24/7 Helpline</h3>
+                    <p class="text-white-8">Need urgent assistance? Chat with us now.</p>
+                    <a href="https://wa.me/917981049476" target="_blank" rel="noopener noreferrer"
+                        class="btn-primary full-width d-block text-center mt-2" style="text-decoration: none;">
+                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (7981049476)
+                    </a>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h4>Active Donors</h4>
+                        <span class="stat-num">1,240</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Requests Today</h4>
+                        <span class="stat-num">45</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- OTP Modal -->
+    <div id="otpModal" class="modal hidden">
+        <div class="modal-content glass-card">
+            <h2><i class="fa-solid fa-shield-halved"></i> Verify OTP</h2>
+            <p>Enter the 4-digit code sent to <span id="otpPhoneDisplay">...</span></p>
+            <div class="input-group">
+                <input type="text" id="otpInput" placeholder="X X X X" maxlength="4" class="otp-input">
+            </div>
+            <button id="verifyOtpBtn" class="btn-primary full-width">Verify & Proceed</button>
+            <button id="closeOtpBtn" class="btn-secondary full-width mt-2">Cancel</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOODTRACKER - AI-Powered Emergency Response</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="logo">
+            <i class="fa-solid fa-droplet pulse-icon"></i> BLOODTRACKER
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="highlight">Home</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="request.html">Request</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+        <button class="btn-primary" id="loginBtn">Login</button>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Every Second Counts. <br><span class="highlight">Save a Life Today.</span></h1>
+                <p>Real-time, AI-prioritized blood coordination network connecting patients to verified donors
+                    instantly.</p>
+                <div class="cta-group">
+                    <a href="request.html" class="btn-danger glow-effect no-underline py-4">
+                        <i class="fa-solid fa-truck-medical"></i> Emergency Request
+                    </a>
+                    <a href="donate.html" class="btn-secondary no-underline py-4">
+                        <i class="fa-solid fa-hand-holding-heart"></i> Register as Donor
+                    </a>
+                </div>
+                <div class="stats-row glass-card-sm">
+                    <div class="stat">
+                        <h3>1,200+</h3>
+                        <p>Donors</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5 mins</h3>
+                        <p>Avg. Response</p>
+                    </div>
+                    <div class="stat">
+                        <h3>850+</h3>
+                        <p>Lives Saved</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="circle-animation"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- OTP Modal -->
+    <div id="otpModal" class="modal hidden">
+        <div class="modal-content glass-card">
+            <h2><i class="fa-solid fa-shield-halved"></i> Verify OTP</h2>
+            <p>Enter the 4-digit code sent to <span id="otpPhoneDisplay">...</span></p>
+            <div class="input-group">
+                <input type="text" id="otpInput" placeholder="X X X X" maxlength="4" class="otp-input">
+            </div>
+            <button id="verifyOtpBtn" class="btn-primary full-width">Verify & Proceed</button>
+            <button id="closeOtpBtn" class="btn-secondary full-width mt-2">Cancel</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood - BLOODTRACKER</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="logo">
+            <i class="fa-solid fa-droplet pulse-icon"></i> BLOODTRACKER
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donate.html" class="highlight">Donate</a></li>
+            <li><a href="request.html">Request</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+        <button class="btn-primary" id="loginBtn">Login</button>
+    </nav>
+
+    <main class="app-container">
+        <!-- Donor Registration Card -->
+        <section class="glass-card form-section">
+            <div class="card-header">
+                <h2><i class="fa-solid fa-user-plus"></i> Join the Hero Network</h2>
+                <p>Your blood can be the lifeline someone needs.</p>
+            </div>
+            <form id="donorForm">
+                <div class="input-group">
+                    <label for="donorName">Full Name</label>
+                    <input type="text" id="donorName" placeholder="John Doe" required>
+                </div>
+                <div class="input-group">
+                    <label for="donorPhone">Phone Number</label>
+                    <input type="tel" id="donorPhone" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Blood Group</label>
+                        <div class="blood-grid">
+                            <input type="radio" name="donorBlood" id="db-o-pos" value="O+" required>
+                            <label for="db-o-pos" class="blood-option">O+</label>
+
+                            <input type="radio" name="donorBlood" id="db-o-neg" value="O-">
+                            <label for="db-o-neg" class="blood-option">O-</label>
+
+                            <input type="radio" name="donorBlood" id="db-a-pos" value="A+">
+                            <label for="db-a-pos" class="blood-option">A+</label>
+
+                            <input type="radio" name="donorBlood" id="db-a-neg" value="A-">
+                            <label for="db-a-neg" class="blood-option">A-</label>
+
+                            <input type="radio" name="donorBlood" id="db-b-pos" value="B+">
+                            <label for="db-b-pos" class="blood-option">B+</label>
+
+                            <input type="radio" name="donorBlood" id="db-b-neg" value="B-">
+                            <label for="db-b-neg" class="blood-option">B-</label>
+
+                            <input type="radio" name="donorBlood" id="db-ab-pos" value="AB+">
+                            <label for="db-ab-pos" class="blood-option">AB+</label>
+
+                            <input type="radio" name="donorBlood" id="db-ab-neg" value="AB-">
+                            <label for="db-ab-neg" class="blood-option">AB-</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="lastDonation">Last Donation</label>
+                        <input type="date" id="lastDonation">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="donorLocation">Location</label>
+                    <div class="location-input">
+                        <input type="text" id="donorLocation" placeholder="Detecting..." readonly>
+                        <button type="button" class="icon-btn" onclick="detectLocation('donor')"
+                            aria-label="Detect Location"><i class="fa-solid fa-location-crosshairs"></i></button>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary full-width">Register Now</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- OTP Modal -->
+    <div id="otpModal" class="modal hidden">
+        <div class="modal-content glass-card">
+            <h2><i class="fa-solid fa-shield-halved"></i> Verify OTP</h2>
+            <p>Enter the 4-digit code sent to <span id="otpPhoneDisplay">...</span></p>
+            <div class="input-group">
+                <input type="text" id="otpInput" placeholder="X X X X" maxlength="4" class="otp-input">
+            </div>
+            <button id="verifyOtpBtn" class="btn-primary full-width">Verify & Proceed</button>
+            <button id="closeOtpBtn" class="btn-secondary full-width mt-2">Cancel</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
